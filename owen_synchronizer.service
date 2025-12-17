@@ -6,9 +6,9 @@ After=network.target
 # Укажите вашего пользователя (например, ubuntu или root)
 User=root
 # Рабочая директория, где лежит скрипт и куда будут писаться файлы
-WorkingDirectory=/opt/owen_synchronizer
+WorkingDirectory=/root/lino
 # Команда запуска
-ExecStart=/usr/bin/python3 /opt/owen_synchronizer/owen_cloud_synchronizer.py
+ExecStart=/root/lino/venv/bin/python /root/lino/owen_cloud_synchronizer.py
 # Перезапуск при падении
 Restart=always
 RestartSec=10

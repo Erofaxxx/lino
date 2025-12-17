@@ -4,9 +4,9 @@ After=network.target owen_synchronizer.service
 
 [Service]
 User=root
-WorkingDirectory=/opt/owen_synchronizer
+WorkingDirectory=/root/lino
 # Запускаем Flask на всех интерфейсах (host=0.0.0.0), порт 5000
-ExecStart=/usr/bin/python3 /opt/owen_synchronizer/web_app.py
+ExecStart=/root/lino/venv/bin/python /root/lino/web_app.py
 Restart=always
 RestartSec=10
 StandardOutput=journal
