@@ -1,0 +1,22 @@
+[Unit]
+Description=Owen Cloud Synchronizer Service
+After=network.target
+
+[Service]
+# Укажите вашего пользователя (например, ubuntu или root)
+User=root
+# Рабочая директория, где лежит скрипт и куда будут писаться файлы
+WorkingDirectory=/opt/owen_synchronizer
+# Команда запуска
+ExecStart=/usr/bin/python3 /opt/owen_synchronizer/owen_cloud_synchronizer.py
+# Перезапуск при падении
+Restart=always
+RestartSec=10
+# Логирование вывода (можно смотреть через journalctl -u owen_synchronizer)
+StandardOutput=journal
+StandardError=journal
+# Переменные окружения (для корректной работы с UTF-8)
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
